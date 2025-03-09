@@ -80,13 +80,70 @@ This reduces the data from 784 dimensions (28x28 pixels) to the specified number
 
 Using the default settings on a modern CPU, training should complete in a few minutes. Using a GPU will significantly accelerate training. The accuracy of the clustering depends on several factors, including the number of components and dimensionality reduction settings.
 
-## Understanding the Results
+## Visualizations and Understanding the Results
 
-After running the algorithm, check the `results` directory for:
+The implementation generates several visualizations to help understand the EM algorithm and its results:
 
-1. `component_means.png`: Visualization of the learned Gaussian means (interpretable as digit prototypes)
-2. `log_likelihood.png`: Convergence plot of the log-likelihood
-3. `confusion_matrix.png`: Confusion matrix showing how well the clusters align with the true digit classes
+### Main Script Visualizations (`main.py`)
+
+When you run the main script, the following visualizations are generated in the output directory:
+
+1. **Component Means (`component_means.png`)**:
+   - Visual representation of the learned Gaussian component means
+   - Each component mean is displayed as a 28x28 image
+   - These can be interpreted as the "prototype" digits discovered by the algorithm
+   - When using the full dimensionality, these should resemble actual handwritten digits
+
+   ![Component Means](https://i.imgur.com/example1.png)
+
+2. **Log-Likelihood Convergence (`log_likelihood.png`)**:
+   - Plot showing the log-likelihood value at each iteration
+   - Helps monitor the convergence of the EM algorithm
+   - A plateau indicates that the algorithm has converged to a (local) optimum
+
+   ![Log-Likelihood](https://i.imgur.com/example2.png)
+
+3. **Confusion Matrix (`confusion_matrix.png`)**:
+   - Shows the relationship between the discovered clusters and the true digit classes
+   - Bright diagonal elements indicate good correspondence between clusters and classes
+   - Off-diagonal elements indicate digits that were clustered together
+
+   ![Confusion Matrix](https://i.imgur.com/example3.png)
+
+### Educational Visualizations (`em_explained.py`)
+
+For a deeper understanding of the EM algorithm, the `em_explained.py` script generates step-by-step visualizations:
+
+1. **PCA Projection (`pca_mnist.png`)**:
+   - MNIST digits projected to 2D using PCA
+   - Different colors represent different true digit classes
+   - Provides intuition about the structure of the data
+
+2. **Initial Components (`em_init.png`)**:
+   - Initial random Gaussian components before EM iterations
+   - Shows starting point of the algorithm
+
+3. **E-Step Visualization (`e_step.png`)**:
+   - Illustrates the computation of responsibilities
+   - Shows which component is responsible for which data points
+   - Includes a heatmap of responsibility values
+
+4. **M-Step Visualization (`m_step.png`)**:
+   - Shows how means and covariances are updated
+   - Arrows indicate the movement of means from old to new positions
+
+5. **Convergence Plot (`convergence.png`)**:
+   - Shows the convergence of log-likelihood over multiple iterations
+
+6. **Final Clustering (`final_clustering.png`)**:
+   - Final cluster assignments with updated Gaussian components
+   - Visual representation of the clustering result
+
+These visualizations are powerful tools for understanding both the EM algorithm itself and the structure of the MNIST dataset.
+
+## Educational Value
+
+This implementation serves both as a practical tool for clustering MNIST digits and as an educational resource for understanding the EM algorithm. The `em_explained.py` script provides a detailed walkthrough of the algorithm with intuitive visualizations.
 
 ## License
 
