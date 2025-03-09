@@ -6,6 +6,8 @@ This project provides an efficient PyTorch implementation of the Expectation-Max
 
 The Expectation-Maximization algorithm is an iterative method for finding maximum likelihood estimates of parameters in statistical models with latent variables. In this implementation, we use EM to fit a Gaussian Mixture Model to the MNIST dataset, which consists of 28x28 grayscale images of handwritten digits (0-9).
 
+![Example Visualization](docs/images/example_viz.png)
+
 ## Features
 
 - Complete implementation of the EM algorithm for Gaussian Mixture Models
@@ -82,7 +84,7 @@ Using the default settings on a modern CPU, training should complete in a few mi
 
 ## Visualizations and Understanding the Results
 
-The implementation generates several visualizations to help understand the EM algorithm and its results. **Run the code to generate these visualizations** - they are not included in the repository but will be created when you execute the scripts.
+The implementation generates several visualizations to help understand the EM algorithm and its results. **Example visualizations** are shown below, and you can generate your own by running the code.
 
 ### Main Script Visualizations (`main.py`)
 

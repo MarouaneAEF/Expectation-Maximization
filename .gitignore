@@ -33,6 +33,11 @@ results/
 *.jpeg
 *.pdf
 
+# BUT allow documentation images
+!docs/images/**/*.png
+!docs/images/**/*.jpg
+!docs/images/**/*.jpeg
+
 # Virtual environment
 venv/
 .env
