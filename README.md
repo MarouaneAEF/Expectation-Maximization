@@ -82,7 +82,7 @@ Using the default settings on a modern CPU, training should complete in a few mi
 
 ## Visualizations and Understanding the Results
 
-The implementation generates several visualizations to help understand the EM algorithm and its results:
+The implementation generates several visualizations to help understand the EM algorithm and its results. **Run the code to generate these visualizations** - they are not included in the repository but will be created when you execute the scripts.
 
 ### Main Script Visualizations (`main.py`)
 
@@ -94,21 +94,15 @@ When you run the main script, the following visualizations are generated in the 
    - These can be interpreted as the "prototype" digits discovered by the algorithm
    - When using the full dimensionality, these should resemble actual handwritten digits
 
-   ![Component Means](https://i.imgur.com/example1.png)
-
 2. **Log-Likelihood Convergence (`log_likelihood.png`)**:
    - Plot showing the log-likelihood value at each iteration
    - Helps monitor the convergence of the EM algorithm
    - A plateau indicates that the algorithm has converged to a (local) optimum
 
-   ![Log-Likelihood](https://i.imgur.com/example2.png)
-
 3. **Confusion Matrix (`confusion_matrix.png`)**:
    - Shows the relationship between the discovered clusters and the true digit classes
    - Bright diagonal elements indicate good correspondence between clusters and classes
    - Off-diagonal elements indicate digits that were clustered together
-
-   ![Confusion Matrix](https://i.imgur.com/example3.png)
 
 ### Educational Visualizations (`em_explained.py`)
 
